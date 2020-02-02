@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:login/app/app_widget.dart';
 import 'package:login/app/modules/home/home_module.dart';
 import 'package:login/app/shared/repositories/localstorage/local_storage_hive.dart';
+import 'package:login/app/shared/repositories/localstorage/local_storage_interface.dart';
 import 'package:login/app/shared/repositories/localstorage/local_storage_share.dart';
 
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
         Bind((i) => AppController()),
-        Bind((i) => LocalStorageHive()),
-        Bind((i) => LocalStorageShared()),
+        //  Bind((i) => LocalStorageHive()),
+        Bind<ILocalStorage>((i) => LocalStorageShared()),
       ];
 
   @override
