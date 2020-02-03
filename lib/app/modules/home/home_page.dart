@@ -18,6 +18,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            icon: Icon(Icons.highlight_off), onPressed: controller.logoff),
         title: TextField(
           controller: controller.textController,
         ),

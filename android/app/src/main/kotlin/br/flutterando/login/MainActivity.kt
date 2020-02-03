@@ -1,4 +1,4 @@
-package com.example.login
+package br.flutterando.login
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

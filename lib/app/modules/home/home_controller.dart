@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:login/app/shared/auth/auth_controller.dart';
 import 'package:login/app/shared/repositories/localstorage/local_storage_interface.dart';
 import 'package:mobx/mobx.dart';
 
@@ -48,5 +49,10 @@ abstract class _HomeBase with Store {
   void remove(int index) {
     list.removeAt(index);
     storage.put('list', list);
+  }
+
+  logoff() async {
+    await Modular.get<AuthController>().logout();
+    Modular.to.pushReplacementNamed('/login');
   }
 }

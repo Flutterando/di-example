@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "310903694451",
+    "firebase_url": "https://slidy-7034e.firebaseio.com",
+    "project_id": "slidy-7034e",
+    "storage_bucket": "slidy-7034e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310903694451:android:7e74329559343dcf357606",
+        "android_client_info": {
+          "package_name": "br.flutterando.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310903694451-cm4l7qc9cbgpb4kk4redhnhvio8ppvq0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.flutterando.login",
+            "certificate_hash": "786c37169e9459b592f260c39dc6defa724559af"
+          }
+        },
+        {
+          "client_id": "310903694451-2vh4gmtlno2c7j7qqf1tcvabsk50ov5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu832LRalDPIQPokg5k86Zq_Bu19wcEKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310903694451-2vh4gmtlno2c7j7qqf1tcvabsk50ov5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
