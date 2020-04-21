@@ -25,8 +25,7 @@ dependencies:
   flutter_mobx: ^1.0.1
   mobx: ^1.0.0
   firebase_auth: ^0.15.4
-  flutter_modular:
-    path: C:\Users\jacob\FlutterProjects\modular
+  flutter_modular: ^1.1.2
   flutter:
     sdk: flutter
 
