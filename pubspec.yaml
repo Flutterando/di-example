@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  flutter_modular: ^2.0.0+1
   shared_preferences: ^0.5.6+1
   google_sign_in: ^4.1.1
   path_provider: ^1.6.0
@@ -25,8 +26,6 @@ dependencies:
   flutter_mobx: ^1.0.1
   mobx: ^1.0.0
   firebase_auth: ^0.15.4
-  flutter_modular:
-    path: C:\Users\jacob\FlutterProjects\modular
   flutter:
     sdk: flutter
 
