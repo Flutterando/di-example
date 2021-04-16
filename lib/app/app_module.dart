@@ -13,7 +13,7 @@ import 'modules/login/login_module.dart';
 import 'shared/auth/repositories/auth_repository_interface.dart';
 import 'splash/splash_page.dart';
 
-class AppModule extends MainModule {
+class AppModule extends Module {
   @override
   List<Bind> get binds => [
         Bind((i) => AppController()),
@@ -24,15 +24,10 @@ class AppModule extends MainModule {
       ];
 
   @override
-  List<Router> get routers => [
-        Router('/', child: (_, args) => SplashPage()),
-        Router('/login',
+  List<ModularRoute> get routers => [
+        ChildRoute('/', child: (_, args) => SplashPage()),
+        ModuleRoute('/login',
             module: LoginModule(), transition: TransitionType.noTransition),
-        Router('/home', module: HomeModule()),
+        ModuleRoute('/home', module: HomeModule()),
       ];
-
-  @override
-  Widget get bootstrap => AppWidget();
-
-  static Inject get to => Inject.of();
 }

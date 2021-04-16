@@ -8,7 +8,7 @@ class ItemWidget extends StatelessWidget {
 
   final HomeController controller = Modular.get();
 
-  ItemWidget({Key key, this.index}) : super(key: key);
+  ItemWidget({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
