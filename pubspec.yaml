@@ -37,6 +37,7 @@ dev_dependencies:
   mockito: ^5.0.2
   build_runner: ^1.12.2
   mobx_codegen: ^2.0.1+2
+  flutter_modular_test: ^1.0.1
   flutter_test:
     sdk: flutter
 
