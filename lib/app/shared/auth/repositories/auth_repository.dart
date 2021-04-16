@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 import 'auth_repository_interface.dart';
 
@@ -26,24 +27,36 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<FirebaseUser> getGoogleLogin() async {
-    final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
+  Future<User> getGoogleLogin() async {
+    late final user;
+    try {
+      UserCredential userCredential;
 
-    final AuthCredential credential = GoogleAuthProvider.getCredential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
-    );
+      if (kIsWeb) {
+        GoogleAuthProvider googleProvider = GoogleAuthProvider();
+        userCredential = await _auth.signInWithPopup(googleProvider);
+      } else {
+        final GoogleSignInAccount googleUser = (await _googleSignIn.signIn())!;
+        final GoogleSignInAuthentication googleAuth =
+            await googleUser.authentication;
 
-    final FirebaseUser user =
-        (await _auth.signInWithCredential(credential)).user;
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+
+        userCredential = await _auth.signInWithCredential(credential);
+      }
+      user = userCredential.user;
+    } catch (e) {
+      print(e);
+    }
     return user;
   }
 
   @override
-  Future<FirebaseUser> getUser() {
-    return _auth.currentUser();
+  Future<User?> getUser() async {
+    return _auth.currentUser;
   }
 
   @override

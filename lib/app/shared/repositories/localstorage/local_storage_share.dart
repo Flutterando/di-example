@@ -24,7 +24,8 @@ class LocalStorageShared implements ILocalStorage {
   @override
   Future<List<String>> get(String key) async {
     var shared = await _instance.future;
-    return shared.getStringList(key);
+    List<String> list = shared.getStringList(key) ?? [];
+    return list;
   }
 
   @override
