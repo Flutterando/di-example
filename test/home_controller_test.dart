@@ -6,7 +6,6 @@ import 'package:login/app/modules/home/home_controller.dart';
 import 'package:login/app/modules/home/home_module.dart';
 import 'package:login/app/shared/repositories/localstorage/local_storage_interface.dart';
 import 'package:login/app/shared/repositories/localstorage/local_storage_mock.dart';
-import 'package:login/app/shared/repositories/localstorage/local_storage_share.dart';
 
 main() {
   final storageMock = LocalStorageMock();
