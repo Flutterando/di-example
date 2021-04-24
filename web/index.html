@@ -25,6 +25,24 @@
       });
     }
   </script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "{ApiKey}",
+      authDomain: "{appdomainname}.firebaseapp.com",
+      projectId: "{ProjectId}",
+      storageBucket: "{storagebucket}.appspot.com",
+      messagingSenderId: "{messaging sender ID}",
+      appId: "{AppId}",
+      measurementId: "{measurementID}"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>

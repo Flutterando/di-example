@@ -4,7 +4,8 @@ class LocalStorageMock implements ILocalStorage {
   List<String> storage = [];
 
   @override
-  Future delete(String key) {
+  Future delete(String key) async {
+    storage.remove(key);
     return null;
   }
 

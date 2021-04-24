@@ -3,16 +3,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'login_controller.dart';
 
-class LoginModule extends ChildModule {
+class LoginModule extends Module {
   @override
   List<Bind> get binds => [
         Bind((i) => LoginController()),
       ];
 
   @override
-  List<Router> get routers => [
-        Router('/', child: (_, args) => LoginPage()),
+  List<ModularRoute> get routers => [
+        ChildRoute('/', child: (_, args) => LoginPage()),
       ];
-
-  static Inject get to => Inject<LoginModule>.of();
 }

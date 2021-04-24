@@ -22,9 +22,8 @@ abstract class _HomeBase with Store {
   _HomeBase() {
     init();
     textController.addListener(() {
-      disableAdd = textController.text == null ||
-          textController.text.isEmpty ||
-          textController.text.length < 3;
+      disableAdd =
+          textController.text.isEmpty || textController.text.length < 3;
     });
   }
 

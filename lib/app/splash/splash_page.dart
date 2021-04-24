@@ -5,14 +5,14 @@ import 'package:mobx/mobx.dart';
 
 class SplashPage extends StatefulWidget {
   final String title;
-  const SplashPage({Key key, this.title = "Splash"}) : super(key: key);
+  const SplashPage({Key? key, this.title = "Splash"}) : super(key: key);
 
   @override
   _SplashPageState createState() => _SplashPageState();
 }
 
 class _SplashPageState extends State<SplashPage> {
-  ReactionDisposer disposer;
+  late ReactionDisposer disposer;
 
   @override
   void initState() {
@@ -37,6 +37,9 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
       body: Center(
         child: CircularProgressIndicator(),
       ),
